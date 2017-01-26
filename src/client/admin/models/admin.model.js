@@ -10,7 +10,7 @@
             }else if(url.indexOf('staging') >= 0){
                 // return 'https://?????';
             }else{
-                return 'https://conduitmusic.co';
+                return 'https://black-and-red-lab.herokuapp.com';
             }
         }
 
@@ -21,7 +21,8 @@
             }else if(url.indexOf('staging') >= 0){
                 // return 'https://????';
             }else{
-                return 'https://d2ljezmo5lkbtt.cloudfront.net';
+                return '';
+                // return 'https://d2ljezmo5lkbtt.cloudfront.net';
             }
         }
 

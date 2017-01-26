@@ -17,22 +17,7 @@ module.exports = function () {
         adminSass: './src/client/admin/styles/styles.scss',
         displaySass: './src/client/display/styles/styles.scss',
         adminSassPaths: [
-            './src/client/admin/components/wrapper',
-            './src/client/admin/components/admin/',
-            './src/client/admin/components/channel-list',
-            './src/client/admin/components/channel-detail',
-            './src/client/admin/components/create-playlist',
-            './src/client/admin/components/curator-dashboard',
-            './src/client/admin/components/curator-list',
-            './src/client/admin/components/set-list',
-            './src/client/admin/components/curator-detail',
-            './src/client/admin/components/hire-curator',
-            './src/client/admin/components/curator-set-detail',
-            './src/client/admin/components/playlist-detail',
-            './src/client/admin/components/landing-page',
-            './src/client/admin/components/player',
-            './src/client/admin/components/my-account',
-            './src/client/admin/components/my-music'
+            './src/client/admin/components/wrapper'
         ],
         displaySassPaths: [
             './src/client/display/components/display/'

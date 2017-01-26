@@ -18,9 +18,6 @@
    <!--  </a> -->
 
     <div class="main-nav" flex="grow" layout="row" layout-align="start center" layout-wrap>
-      <md-button ng-click="wrapperCtrl.showChannels()" class="nav-link" hide-xs>Channels</md-button>
-      <md-button ng-click="wrapperCtrl.showCurators()" class="nav-link" hide-xs>Curators</md-button>
-      <md-button ng-click="wrapperCtrl.showSets()" class="nav-link" style="min-width:59px" hide-xs>Sets</md-button>
 <!--
       <md-button ng-click="wrapperCtrl.showNowPlaying()"
                  ng-show="wrapperCtrl.selectedPlaylist && !wrapperCtrl.showPlaylistDetail" 
@@ -37,27 +34,7 @@
   <md-content ng-controller="sideNavCtrl" layout-padding layout="column">
     <i class="material-icons" ng-click="close()">close</i>
     <!-- <p ng-show="wrapperCtrl.userData">Logged in as: <br> {{ wrapperCtrl.userData.username }}</p> -->
-    <p flex ng-click="show('channels')">Channels</p>
-    <p flex ng-click="show('curators')">Curators</p>
-    <p flex ng-click="show('sets')">Sets</p>
-    <p flex 
-               ng-show="wrapperCtrl.userData && wrapperCtrl.userData.isCurator"
-               ng-click="show('curatorDash')">
-      Curator Dashboard
-    </p>
-    <p flex 
-               ng-show="wrapperCtrl.userData && wrapperCtrl.userData.username"
-               ng-click="show('myMusic')">
-      My Music
-    </p>
-    <p flex 
-               ng-show="wrapperCtrl.userData && wrapperCtrl.userData.username"
-               ng-click="show('myAccount')">
-      Account
-    </p>
-    <p>
-      <a href="https://blog.conduitmusic.co" target="_blank" style="display:block;font-size:16px;">Blog</a>
-    </p>
+
     <p flex 
                ng-show="wrapperCtrl.userData && wrapperCtrl.userData.username"
                ng-click="logOut()">
@@ -69,48 +46,15 @@
       Log In
     </p>
     <p flex 
-               ng-click="show('getTheApp')">
-      Get the app
-    </p>
-    <p flex 
                class="pink-link"
                ng-show="!wrapperCtrl.userData || !wrapperCtrl.userData.username"
                ng-click="show('createAccount')">
       Sign Up
     </p>
-    <p flex 
-               class="pink-link"
-               ng-click="show('subscribe')" 
-               ng-show="wrapperCtrl.userData && wrapperCtrl.userData.username && wrapperCtrl.subscriptionStatus !== 'Active'">
-      Subscribe
-    </p>
 
-    <md-divider></md-divider>
-
-    <div class="bottom-links">
-      <a href="/legal/terms" target="_blank">Terms of Use</a>
-      <a href="/legal/privacy" target="_blank">Privacy</a>
-      <a ng-click="wrapperCtrl.showModal('support')">Feedback / Support</a>
-    </div>
   </md-content>
 </md-sidenav>
 
-<landing-page ng-if="wrapperCtrl.showLandingPage"></landing-page>
-<admin ng-if="wrapperCtrl.showAdmin"></admin>
-<my-account ng-if="wrapperCtrl.showMyAccount"></my-account>
-<my-music ng-if="wrapperCtrl.showMyMusic"></my-music>
-<channel-list ng-if="wrapperCtrl.showChannelList"></channel-list>
-<channel-detail ng-if="wrapperCtrl.showChannelDetail"></channel-detail>
-<create-playlist ng-if="wrapperCtrl.showCreatePlaylist"></create-playlist>
-<curator-dash ng-if="wrapperCtrl.showCuratorDash"></curator-dash>
-<curator-detail ng-if="wrapperCtrl.showCuratorDetail"></curator-detail>
-<hire-curator ng-if="wrapperCtrl.showHireCurator"></hire-curator>
-<curator-list ng-if="wrapperCtrl.showCuratorList"></curator-list>
-<set-list ng-if="wrapperCtrl.showSetList"></set-list>
-<playlist-detail ng-if="wrapperCtrl.showPlaylistDetail"></playlist-detail>
-<legal ng-if="wrapperCtrl.showLegal"></legal>
-<player-component ng-if="wrapperCtrl.showPlayerComponent"></player-component>
-<curator-set ng-if="wrapperCtrl.showCuratorSetDetail"></curator-set>
 
 
 
