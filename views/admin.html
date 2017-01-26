@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html ng-app="admin">
+
+<head>
+    <style>
+        /* this helps the ng-show/ng-hide animations start at the right place. */
+        /* since Angular has this but needs to load, this gives us the class early. */
+
+        .ng-hide {
+            display: none!important;
+        }
+    </style>
+    <title>Polaroid Celebration</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+
+    <!-- <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-194x194.png" sizes="194x194">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff"> -->
+
+    <!-- build:css /styles/lib.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="/src/client/libs/angular-material/angular-material.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+
+
+    <!-- build:css /styles/custom.css -->
+
+    <!-- endbuild -->
+
+    <!-- build:css /styles/app.css -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/.adminTmp/styles/styles.css">
+    <!-- endinject -->
+    <!-- endbuild -->
+
+</head>
+
+
+
+
+<body>
+  
+
+    <wrapper></wrapper>
+
+    <!-- build:js /js/lib.js -->
+    <!-- bower:js -->
+    <script src="/src/client/libs/angular/angular.js"></script>
+    <script src="/src/client/libs/angular-animate/angular-animate.js"></script>
+    <script src="/src/client/libs/angular-aria/angular-aria.js"></script>
+    <script src="/src/client/libs/angular-messages/angular-messages.js"></script>
+    <script src="/src/client/libs/angular-material/angular-material.js"></script>
+    <script src="/src/client/libs/angular-cookies/angular-cookies.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js /js/custom.js -->
+
+    <!-- endbuild -->
+
+    <!-- build:js /js/app.js -->
+    <!-- inject:js -->
+
+
+
+
+
+    <script src="/src/client/admin/app.module.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/admin/admin.module.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/channel-detail/channel-detail.module.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/channel-list/channel-list.module.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/components.module.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/create-playlist/create-playlist.module.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/curator-dashboard/curator-dashboard.module.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/curator-detail/curator-detail.module.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/curator-list/curator-list.module.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/curator-set-detail/curator-set-detail.module.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/hire-curator/hire-curator.module.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/landing-page/landing-page.module.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/legal/legal.module.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/my-account/my-account.module.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/my-music/my-music.module.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/player/player.module.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/playlist-detail/playlist-detail.module.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/set-list/set-list.module.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/wrapper/wrapper.module.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/services/http/module/http.module.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/services/services.module.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/admin/admin.directive.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/admin/admin.service.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/channel-detail/channel-detail.directive.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/channel-detail/channel-detail.service.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/channel-list/channel-list.directive.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/channel-list/channel-list.service.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/create-playlist/create-playlist.directive.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/create-playlist/create-playlist.service.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/curator-dashboard/curator-dashboard.directive.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/curator-dashboard/curator-dashboard.service.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/curator-detail/curator-detail.directive.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/curator-detail/curator-detail.service.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/curator-list/curator-list.directive.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/curator-list/curator-list.service.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/curator-set-detail/curator-set-detail.directive.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/curator-set-detail/curator-set-detail.service.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/hire-curator/hire-curator.directive.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/hire-curator/hire-curator.service.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/landing-page/landing-page.directive.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/landing-page/landing-page.service.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/legal/legal.directive.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/legal/legal.service.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/my-account/my-account.directive.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/my-account/my-account.service.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/my-music/my-music.directive.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/my-music/my-music.service.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/player/player.directive.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/player/player.service.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/playlist-detail/playlist-detail.directive.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/playlist-detail/playlist-detail.service.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/set-list/set-list.directive.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/set-list/set-list.service.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/wrapper/wrapper.directive.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/components/wrapper/wrapper.service.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/constants/admin.constants.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/models/admin.model.js"></script>
+
+
+
+
+
+    <script src="/src/client/admin/services/http/http.service.js"></script>
+
+
+
+
+
+    <!-- endinject -->
+    <!-- endbuild -->
+
+    <!-- build:js /js/templates.js -->
+    <!-- inject:templates:js -->
+    <script src="/.adminTmp/templates.js"></script>
+    <!-- endinject -->
+    <!-- endbuild -->
+
+
+</body>
+
+</html>

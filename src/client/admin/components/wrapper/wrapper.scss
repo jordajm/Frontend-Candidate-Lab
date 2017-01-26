@@ -1,0 +1,339 @@
+.browser-alert, .flash-alert {
+  background-color: #E06A26;
+  color: #fff;
+  text-align: center;
+  padding: 25px 0;
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    font-weight: bold;
+    cursor: pointer;
+  }
+}
+
+.flash-alert {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+
+  i {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #fff;
+  }
+}
+
+.get-the-app-modal {
+  h4 {
+    text-align: center;
+  }
+
+  a {
+    display: block;
+  }
+
+  .mobile {
+    img {
+      max-width: 200px;
+      display: block;
+      margin: auto;
+      margin-bottom: 15px;
+    }
+  }
+
+  .desktop {
+    img {
+      max-width: 80px;
+      display: block;
+      margin: auto;
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.nav-link span {
+  font-family: 'Varela Round', sans-serif !important;
+  text-transform: lowercase;
+  font-weight: normal !important;
+  font-size: 21px;
+}
+
+.logo-img {
+  max-height: 70px;
+}
+.logo-img-icon {
+  max-height: 60px;
+  width: 60px;
+  height: 60px;
+}
+
+md-toolbar, md-menu-item {
+
+  i {
+    vertical-align: top;
+  }
+}
+
+md-sidenav {
+  a {
+    color: #000;
+    text-align: center;
+    padding: 0 !important;
+    font-size: 12px;
+  }
+}
+
+md-toolbar {
+  height: 100px;
+
+  md-menu {
+    margin-top: 7px !important;
+  }
+
+  .pink-link span{
+    font-family: 'Varela Round', sans-serif !important;
+    font-size: 21px;
+    font-weight: normal !important;
+  }
+  
+  .md-toolbar-tools {
+    flex-flow: row;
+    justify-content: flex-start;
+    width: 90%;
+    margin: auto;
+    
+    .main-nav {
+      margin: 10px 0 0 40px;
+      
+      button {
+       @media screen and (max-width: 600px) {
+          margin: 6px 0;
+        }
+      }
+
+      button > span {
+        font-weight: bold;
+      }
+      
+      button#nowplaying {
+       @media screen and (max-width: 600px) {
+          margin: -1em 0 0 0;
+          min-height: 0;
+        }
+      }
+      
+      button#nowplaying span {
+       @media screen and (max-width: 600px) {
+          font-size: 16px;
+        }
+      }
+    }
+    .right-nav {
+      margin-right: -20px;
+      
+      @media screen and (max-width: 600px) {
+        margin-right: 0;
+      }
+      
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  md-toolbar .md-toolbar-tools {
+    padding: 0;
+    
+    .main-nav {
+      margin-left: 10px;
+    }
+  }
+  
+  .nav-link span {
+    font-size: 18px;
+  }
+}
+
+
+.login-modal {
+
+  md-input-container {
+    margin: 0;
+    width: 100%;
+  }
+
+  .login-modal-inner {
+    min-width: 450px;
+    @media screen and (max-width: 600px) {
+      min-width: 300px;
+    }
+  }
+
+}
+
+.close-btn:hover {
+  cursor: pointer;
+}
+
+button i {
+  vertical-align: top;
+  margin-top: 5px !important;
+}
+
+.delete-btn {
+  line-height: 25px;
+  min-height: 25px;
+}
+
+.md-sidenav-right {
+  top: 40px;
+  left: 99%;
+  max-width: 225px;
+  bottom: inherit;
+  box-shadow: none;
+  background-color: #97D3BC;
+
+  md-content {
+    background-color: transparent;
+
+    i {
+      position: absolute;
+      right: 0;
+      top: 0;
+      opacity: 0.5;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  
+    p, a {
+      text-align: center;
+      margin: 0;
+      text-transform: uppercase;
+
+      &:hover {
+        cursor: pointer;
+        color: #fff;
+      }
+    }
+
+    md-divider {
+      padding: 0;
+      margin-top: 15px;
+    }
+
+    .bottom-links {
+      padding-top: 17px;
+
+      a {
+        display: block;
+
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+.landing-page {
+  text-align: center;
+  
+  div[class ^= "landing-col"]:before {
+    content: '';
+    display: inline-block;
+    padding-top: 100%;
+  }
+  div[class ^= "landing-col"] {
+    
+    text-align: center;
+    
+    .circle {
+      width: 80%;
+      padding-top: 80%;
+      float: left;
+      margin-top: 10%;
+      margin-left: 10%;
+      position: relative;
+    }
+
+  }
+  
+  .landing-col-1 {
+    background-image: url('https://d3itspfsh9cmg0.cloudfront.net/splash_mixtapes.jpg');
+    background-size: cover;
+    
+    .circle {
+      background-color: #aadac9;
+    }
+    
+    .logo {
+      width: 75%;
+      position: absolute;
+      top: 33%;
+      left: 10%;
+    }
+  }
+  .landing-col-2 {
+    background-color: #bc9e2f;
+
+  }
+  .landing-col-3 {
+    background-image: url('https://d3itspfsh9cmg0.cloudfront.net/splash_sparkles.jpg');
+    background-size: cover; 
+    
+    .circle {
+      background-color: #d71389;
+    }
+    
+    h1 {
+      width: 75%;
+      position: absolute;
+      top: 16%;
+      left: 14%;
+      color: white;
+      font-size: 2.5vw
+    }
+  }
+}
+
+.landing-form {
+  text-align: center;
+}
+
+
+
+@media screen and (max-width: 960px) {
+    
+  .landing-col-3 .circle h1 {
+    font-size: 7vw;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+
+  .landing-col-3 .circle h1 {
+    top: 25%;
+  }
+
+  md-toolbar > img {
+    margin: 3px !important;
+  }
+
+}
+
+.lets-go-btn {
+  float: right;
+  margin-right: 50px;
+  margin-bottom: 20px;
+}
+
+
+

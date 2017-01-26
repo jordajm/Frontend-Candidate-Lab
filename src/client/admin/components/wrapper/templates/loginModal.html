@@ -1,0 +1,39 @@
+<md-dialog class="login-modal"> 
+  <div layout="column" class="login-modal-inner md-whiteframe-z1">
+    <md-toolbar>
+      <img src="https://d3itspfsh9cmg0.cloudfront.net/Conduit_icon-RGB-SM.png" height="50">
+      <i class="material-icons" ng-click="close()">close</i>
+    </md-toolbar>
+    <md-content layout="column" class="md-padding">
+
+        <form ng-submit="login(userCreds)">
+          <h3>Log In</h3>
+          <div>
+            <md-input-container>
+              <label>Email Address</label>
+              <input type="email" ng-model="userCreds.username" required/>
+            </md-input-container>
+          </div>
+          <div>
+            <md-input-container>
+              <label>Password</label>
+              <input type="password" ng-model="userCreds.password" required/>
+            </md-input-container>
+          </div>
+          <p class="form-error-msg" ng-show="loginFailure">Login Failed - Please try again, or reset your password.</p>
+          <div layout="column" layout-align="center right">
+            <div flex>
+              <md-button type='button' ng-click="close()">Cancel</md-button>
+              <md-button type='submit' class="pink-link">Login</md-button>
+            </div>
+            <div flex="flex"></div>
+            <span class="sub-link" type="button" ng-click="showForgot()" md-no-ink="md-no-ink">
+              Forgot your password?
+            </span>
+          </div>
+          <md-progress-circular md-mode="indeterminate" ng-show="loginLoading"></md-progress-circular>
+        </form>
+
+    </md-content>
+  </div>
+</md-dialog>

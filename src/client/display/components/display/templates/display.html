@@ -1,0 +1,40 @@
+<div class="jtk-demo-main" id="jtk-demo-flowchart">
+
+    <!-- edit text (question or action or output or edge label) -->
+    <script type="jtk" class="dlg" id="dlgText" title="Enter Text">
+        <input type="text" size="50" jtk-focus jtk-att="text" value="${text}" jtk-commit="true"/>
+    </script>
+
+    <script type="jtk" class="dlg" id="dlgConfirm" title="Please Confirm">
+        ${msg}?
+    </script>
+
+    <script type="jtk" class="dlg" id="dlgMessage" title="Message" cancel="false">
+        ${msg}
+    </script>
+    
+
+    <!-- this is the main drawing area -->
+    <div class="jtk-demo-canvas display-full-screen">
+
+        <jsplumb-toolkit 
+                params="displayCtrl.toolkitParams"
+                init="displayCtrl.init"
+                render-params="displayCtrl.renderParams"
+                jtk-id="flowchartToolkit"
+                surface-id="flowchartSurface"
+                style="width:750px;height:600px;position:relative;margin:0">
+
+            <!-- controls -->
+            <div class="controls">
+
+            </div>
+
+            <!-- miniview -->
+            <jsplumb-miniview surface-id="flowchartSurface" class="miniview"></jsplumb-miniview>
+
+        </jsplumb-toolkit>
+
+    </div>
+
+</div>

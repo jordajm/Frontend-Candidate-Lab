@@ -1,0 +1,52 @@
+<md-dialog class="login-modal accept-terms-modal"> 
+  <div layout="column" class="login-modal-inner md-whiteframe-z1">
+    <md-toolbar>
+      <img src="https://d3itspfsh9cmg0.cloudfront.net/Conduit_icon-RGB-SM.png" height="50">
+      <i class="material-icons" ng-click="close()">close</i>
+    </md-toolbar>
+    <md-content layout="column" class="md-padding">
+
+      <h3>Please create a free account</h3>
+
+      <span class="sub-link" ng-click="showLoginModal()">Already have a Conduit account?  Log In</span>
+
+      <br>
+      <br>
+
+      <form name="acceptForm" ng-submit="acceptForm.$valid && submitSignupForm(data)">
+        <div>
+          <md-input-container>
+            <label>Email</label>
+            <input type="email" ng-model="data.email" class="dialog-close" required/>
+          </md-input-container>
+        </div>
+        <div>
+          <md-input-container>
+            <label>Choose a Password</label>
+            <input type="password" ng-model="data.password" required/>
+          </md-input-container>
+        </div>
+        <div>
+          <md-input-container>
+            <label>Confirm Password</label>
+            <input type="password" ng-model="data.confirmPassword" required/>
+          </md-input-container>
+        </div>
+        <div>
+          <input type="checkbox" required>
+          <label>I have read and agree to the <a href="/legal/terms" target="_blank">Terms of Use</a>, and the <a href="/legal/privacy" target="_blank">Privacy Policy</a>.</label>
+        </div>
+        <p class="form-error-msg" ng-show="showUserExistsMessage">A user with that email address already exists.<br> If you need to change your password, click "Log in" and then "Change Password".</p>
+
+        <div layout="column" layout-align="center right" class="margin-top">
+          <div flex>
+            <md-button type='button' ng-click="close()">Cancel</md-button>
+            <md-button type='submit' class="pink-link">Sign Up</md-button>
+          </div>
+        </div>
+
+      </form>
+
+    </md-content>
+  </div>
+</md-dialog>

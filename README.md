@@ -35,6 +35,52 @@ Submit a pull request when you are finished and satisfied with your work.
 
 Use this area to communicate any thought processes, ideas, or challenges you encountered.
 
-*
-*
-*
+
+=================================================================================
+
+
+Running the Project Locally
+
+
+#1 
+Install [Node.js](http://nodejs.org)
+
+- on OSX use [homebrew](http://brew.sh) `brew install node`
+- on Windows use [chocolatey](https://chocolatey.org) `choco install nodejs`
+
+
+#2
+Install these NPM packages globally
+
+npm install -g bower gulp nodemon tsd
+
+
+
+#3
+Within project root directory perform the following:
+
+npm install
+
+
+#4
+Run the project
+
+gulp serve-dev
+
+
+
+At this point your browser should open automatically and you should see the app running on localhost:3300
+
+
+====================================================================================
+
+
+#TO-DO
+- Update package.json deps
+- Forgot PW - either delete or implement
+- implement CSRF tokens
+
+
+
+
+
