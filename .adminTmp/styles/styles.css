@@ -219,3 +219,40 @@ button i {
   left: 0;
   background: url(https://d3itspfsh9cmg0.cloudfront.net/wood-bg.png) no-repeat center center fixed;
   background-size: cover; }
+
+.bottom-left-cta {
+  padding: 30px;
+  background-color: #fff;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 800px;
+  background: url(https://d3itspfsh9cmg0.cloudfront.net/white-texture-bg.png) no-repeat;
+  background-size: cover; }
+  .bottom-left-cta h1 {
+    margin: 0; }
+  .bottom-left-cta button {
+    border: none;
+    padding: 10px 20px;
+    margin: 10px 20px 10px 0;
+    color: #fff;
+    text-transform: uppercase;
+    -webkit-transition: background-color 200ms ease-out;
+    transition: background-color 200ms ease-out; }
+    .bottom-left-cta button.yes-btn {
+      background-color: #ff9933; }
+      .bottom-left-cta button.yes-btn:hover {
+        background-color: #cc6600; }
+    .bottom-left-cta button.no-btn {
+      background-color: #333333; }
+      .bottom-left-cta button.no-btn:hover {
+        background-color: #666666; }
+  @media screen and (max-width: 465px) {
+    .bottom-left-cta button {
+      width: 100%;
+      margin: 10px 0; } }
+
+@media screen and (max-width: 800px) {
+  .bottom-left-cta {
+    width: inherit;
+    rigth: 0; } }

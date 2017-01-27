@@ -1,0 +1,30 @@
+<md-dialog class="login-modal"> 
+  <div layout="column" class="login-modal-inner md-whiteframe-z1">
+    <md-content layout="column" class="md-padding">
+    
+        <h3 ng-show="isYesClick">Great - we'll see you there!</h3>
+
+        <p ng-show="isYesClick">Enter your email and we'll send you an event reminder:</p>
+
+        <h3 ng-show="!isYesClick">Sorry you can't make it</h3>
+
+        <p ng-show="!isYesClick">Enter your email and we'll make sure you know about the next event!</p>
+
+        <form ng-submit="submitEmail()">
+          <div>
+            <md-input-container>
+              <label>Email</label>
+              <input type="email" required/>
+            </md-input-container>
+          </div>
+
+          <div layout="row" layout-align="center center">
+            <md-button type='button' class="md-raised md-default" ng-click="close()">Cancel</md-button>
+            <div flex="flex"></div>
+            <md-button type='submit' class="md-raised md-primary">Submit</md-button>
+          </div>
+        </form>
+
+    </md-content>
+  </div>
+</md-dialog>

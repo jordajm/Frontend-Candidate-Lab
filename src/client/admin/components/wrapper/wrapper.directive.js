@@ -26,6 +26,10 @@
             viewNotes: {
                 controller: viewNotesCtrl,
                 template: 'admin/wrapper/templates/viewNotesModal.html'
+            },
+            handleClick: {
+                controller: handleClickCtrl,
+                template: 'admin/wrapper/templates/handleClickModal.html'
             }
         };
 
@@ -109,6 +113,14 @@
             });
         };
 
+        ctrl.handleYesClick = function() {
+            ctrl.showModal('handleClick', { yesAnswer: true });
+        };
+
+        ctrl.handleNoClick = function() {
+            ctrl.showModal('handleClick', { yesAnswer: false });
+        };
+
         ctrl.showToaster = function(msg) {
             $mdToast.show(
               $mdToast.simple()
@@ -143,6 +155,7 @@
                         $scope.showUserExistsMessage = false;
 
                         $rootScope.$broadcast('hideModal');
+                        $scope.showToaster('Welcome!');
 
                         var user = {
                             username: data.email,
@@ -394,6 +407,34 @@
     }
 
     viewNotesCtrl.$inject = ['$scope', '$rootScope', '$timeout', '$mdDialog', '$mdToast', 'HTTPService', 'adminAppModel'];
+
+
+    function handleClickCtrl($scope, $rootScope, $timeout, $mdDialog, $mdToast, HTTPService, adminAppModel, yesAnswer) {
+
+        $scope.isYesClick = yesAnswer;
+
+        $scope.close = function() {
+            $rootScope.$broadcast('hideModal');
+        };
+
+        $scope.submitEmail = function() {
+            $scope.close();
+            $scope.showToaster('Thanks - check your email!');
+        };
+
+        $scope.showToaster = function(msg) {
+            $mdToast.show(
+              $mdToast.simple()
+                .content(msg)
+                .position('top right')
+                .hideDelay(3000)
+            );
+        };
+
+    }
+
+    handleClickCtrl.$inject = ['$scope', '$rootScope', '$timeout', '$mdDialog', '$mdToast', 'HTTPService', 'adminAppModel', 'yesAnswer'];
+
 
 
     function wrapperDirective() {

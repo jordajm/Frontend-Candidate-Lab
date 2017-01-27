@@ -176,4 +176,77 @@ button i {
   background-size: cover;
 }
 
+.bottom-left-cta {
+  padding: 30px;
+  background-color: #fff;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 800px;
+  background: url(https://d3itspfsh9cmg0.cloudfront.net/white-texture-bg.png) no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  h1 {
+    margin: 0;
+  }
+
+  button {
+    border: none;
+    padding: 10px 20px;
+    margin: 10px 20px 10px 0;
+    color: #fff;
+    text-transform: uppercase;
+    -webkit-transition: background-color 200ms ease-out;
+    -moz-transition: background-color 200ms ease-out;
+    -o-transition: background-color 200ms ease-out;
+    transition: background-color 200ms ease-out;
+
+    &.yes-btn {
+      background-color: #ff9933;
+
+      &:hover {
+        background-color: #cc6600;
+      }
+    }
+
+    &.no-btn {
+      background-color: #333333;
+
+      &:hover {
+        background-color: #666666;
+      }
+    }
+  }
+
+  @media screen and (max-width: 465px) {
+    button {
+      width: 100%;
+      margin: 10px 0;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .bottom-left-cta {
+    width: inherit;
+    rigth: 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
