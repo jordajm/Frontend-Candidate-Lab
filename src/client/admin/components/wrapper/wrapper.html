@@ -1,31 +1,8 @@
-<!-- <div ng-show="wrapperCtrl.showBrowserAlert" class="browser-alert">
-  <p>We recommend using <a href="https://www.google.com/chrome/browser/desktop/index.html" target="_blank">Chrome</a> or <a href="https://support.apple.com/downloads/safari" target="_blank">Safari</a> for the best listening experience.</p>
-</div> -->
-<!-- <div ng-show="wrapperCtrl.showFlashBlockedMessage" class="flash-alert">
-  <i class="material-icons" ng-click="wrapperCtrl.showFlashBlockedMessage = false">close</i>
-  <p>
-    Looks like we're having trouble playing this set.<br>
-    Please check your internet connection<br>
-    If this problem persists, please contact support@conduitmusic.co
-  </p>
-</div> -->
-<md-toolbar class="md-primary md-hue-3" ng-hide="wrapperCtrl.hideNav">
+<md-toolbar ng-hide="wrapperCtrl.hideNav">
   <div flex layout="row" class="md-toolbar-tools">
 
-    <!-- <a href="https://conduitmusic.co/channels"> -->
-      <img class="logo-img" flex="noshrink" hide show-gt-xs src="https://d3itspfsh9cmg0.cloudfront.net/logo.svg">
-      <img class="logo-img-icon" flex="noshrink" width="60px" hide-gt-xs src="https://d3itspfsh9cmg0.cloudfront.net/logo-icon.svg">
-   <!--  </a> -->
-
-    <div class="main-nav" flex="grow" layout="row" layout-align="start center" layout-wrap>
-<!--
-      <md-button ng-click="wrapperCtrl.showNowPlaying()"
-                 ng-show="wrapperCtrl.selectedPlaylist && !wrapperCtrl.showPlaylistDetail" 
-                 class="pink-link" id="nowplaying">Now Playing</md-button>
--->
-    </div>
     <div class="right-nav" flex="auto" flex-xs="auto">
-      <i style="float:right;" class="material-icons" ng-click="wrapperCtrl.showSideNav()">menu</i>
+      <i class="material-icons" ng-click="wrapperCtrl.showSideNav()">menu</i>
     </div>
   </div>
 </md-toolbar>
@@ -34,6 +11,8 @@
   <md-content ng-controller="sideNavCtrl" layout-padding layout="column">
     <i class="material-icons" ng-click="close()">close</i>
     <!-- <p ng-show="wrapperCtrl.userData">Logged in as: <br> {{ wrapperCtrl.userData.username }}</p> -->
+
+    <p ng-show="wrapperCtrl.username">Logged in as: {{ wrapperCtrl.username }}</p>
 
     <p flex 
                ng-show="wrapperCtrl.userData && wrapperCtrl.userData.username"
@@ -54,6 +33,12 @@
 
   </md-content>
 </md-sidenav>
+
+<div class="body-wrapper" flex="100" layout="row" layout-wrap layout-padding>
+
+
+
+</div>
 
 
 

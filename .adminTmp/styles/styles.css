@@ -101,46 +101,8 @@ h4 {
   .material-icons.md-92 {
     font-size: 92px; }
 
-.browser-alert, .flash-alert {
-  background-color: #E06A26;
-  color: #fff;
-  text-align: center;
-  padding: 25px 0; }
-  .browser-alert p, .flash-alert p {
-    margin: 0; }
-  .browser-alert a, .flash-alert a {
-    font-weight: bold;
-    cursor: pointer; }
-
-.flash-alert {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 99; }
-  .flash-alert i {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    color: #fff; }
-
-.get-the-app-modal h4 {
-  text-align: center; }
-
-.get-the-app-modal a {
-  display: block; }
-
-.get-the-app-modal .mobile img {
-  max-width: 200px;
-  display: block;
-  margin: auto;
-  margin-bottom: 15px; }
-
-.get-the-app-modal .desktop img {
-  max-width: 80px;
-  display: block;
-  margin: auto;
-  margin-bottom: 15px; }
+[ng-click] {
+  cursor: pointer; }
 
 .nav-link span {
   font-family: 'Varela Round', sans-serif !important;
@@ -148,31 +110,16 @@ h4 {
   font-weight: normal !important;
   font-size: 21px; }
 
-.logo-img {
-  max-height: 70px; }
-
-.logo-img-icon {
-  max-height: 60px;
-  width: 60px;
-  height: 60px; }
-
 md-toolbar i, md-menu-item i {
   vertical-align: top; }
 
-md-sidenav a {
-  color: #000;
-  text-align: center;
-  padding: 0 !important;
-  font-size: 12px; }
+md-sidenav p {
+  color: #fff; }
 
 md-toolbar {
-  height: 100px; }
+  background-color: #fff !important; }
   md-toolbar md-menu {
     margin-top: 7px !important; }
-  md-toolbar .pink-link span {
-    font-family: 'Varela Round', sans-serif !important;
-    font-size: 21px;
-    font-weight: normal !important; }
   md-toolbar .md-toolbar-tools {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -199,6 +146,9 @@ md-toolbar {
           font-size: 16px; } }
     md-toolbar .md-toolbar-tools .right-nav {
       margin-right: -20px; }
+      md-toolbar .md-toolbar-tools .right-nav i {
+        color: #000;
+        float: right; }
       @media screen and (max-width: 600px) {
         md-toolbar .md-toolbar-tools .right-nav {
           margin-right: 0; } }
@@ -211,11 +161,15 @@ md-toolbar {
   .nav-link span {
     font-size: 18px; } }
 
+.login-modal .sub-link {
+  margin-bottom: 20px; }
+
 .login-modal md-input-container {
   margin: 0;
   width: 100%; }
 
 .login-modal .login-modal-inner {
+  padding-top: 10px;
   min-width: 450px; }
   @media screen and (max-width: 600px) {
     .login-modal .login-modal-inner {
@@ -238,87 +192,30 @@ button i {
   max-width: 225px;
   bottom: inherit;
   box-shadow: none;
-  background-color: #97D3BC; }
+  background-color: #333333; }
   .md-sidenav-right md-content {
     background-color: transparent; }
     .md-sidenav-right md-content i {
+      color: #fff;
       position: absolute;
       right: 0;
       top: 0;
       opacity: 0.5; }
       .md-sidenav-right md-content i:hover {
-        color: #fff; }
+        color: #ccc; }
     .md-sidenav-right md-content p, .md-sidenav-right md-content a {
       text-align: center;
       margin: 0;
       text-transform: uppercase; }
       .md-sidenav-right md-content p:hover, .md-sidenav-right md-content a:hover {
         cursor: pointer;
-        color: #fff; }
-    .md-sidenav-right md-content md-divider {
-      padding: 0;
-      margin-top: 15px; }
-    .md-sidenav-right md-content .bottom-links {
-      padding-top: 17px; }
-      .md-sidenav-right md-content .bottom-links a {
-        display: block; }
-        .md-sidenav-right md-content .bottom-links a:hover {
-          color: #fff; }
+        color: #ccc; }
 
-.landing-page {
-  text-align: center; }
-  .landing-page div[class^="landing-col"]:before {
-    content: '';
-    display: inline-block;
-    padding-top: 100%; }
-  .landing-page div[class^="landing-col"] {
-    text-align: center; }
-    .landing-page div[class^="landing-col"] .circle {
-      width: 80%;
-      padding-top: 80%;
-      float: left;
-      margin-top: 10%;
-      margin-left: 10%;
-      position: relative; }
-  .landing-page .landing-col-1 {
-    background-image: url("https://d3itspfsh9cmg0.cloudfront.net/splash_mixtapes.jpg");
-    background-size: cover; }
-    .landing-page .landing-col-1 .circle {
-      background-color: #aadac9; }
-    .landing-page .landing-col-1 .logo {
-      width: 75%;
-      position: absolute;
-      top: 33%;
-      left: 10%; }
-  .landing-page .landing-col-2 {
-    background-color: #bc9e2f; }
-  .landing-page .landing-col-3 {
-    background-image: url("https://d3itspfsh9cmg0.cloudfront.net/splash_sparkles.jpg");
-    background-size: cover; }
-    .landing-page .landing-col-3 .circle {
-      background-color: #d71389; }
-    .landing-page .landing-col-3 h1 {
-      width: 75%;
-      position: absolute;
-      top: 16%;
-      left: 14%;
-      color: white;
-      font-size: 2.5vw; }
-
-.landing-form {
-  text-align: center; }
-
-@media screen and (max-width: 960px) {
-  .landing-col-3 .circle h1 {
-    font-size: 7vw; } }
-
-@media screen and (max-width: 600px) {
-  .landing-col-3 .circle h1 {
-    top: 25%; }
-  md-toolbar > img {
-    margin: 3px !important; } }
-
-.lets-go-btn {
-  float: right;
-  margin-right: 50px;
-  margin-bottom: 20px; }
+.body-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url(https://d3itspfsh9cmg0.cloudfront.net/wood-bg.png) no-repeat center center fixed;
+  background-size: cover; }

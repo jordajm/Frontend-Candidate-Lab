@@ -3,7 +3,6 @@
 exports = module.exports = function(app, mongoose) {
   var accountSchema = new mongoose.Schema({ 
     username: String,
-    isAdmin: { type: Boolean, default: false },
     password: String
   });
 
