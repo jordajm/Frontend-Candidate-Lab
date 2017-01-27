@@ -1,0 +1,22 @@
+<md-dialog class="login-modal"> 
+  <div layout="column" class="login-modal-inner md-whiteframe-z1">
+    <md-content layout="column" class="md-padding">
+    
+        <h3>My Notes</h3>
+
+        <md-list>
+          <md-list-item ng-repeat="note in notes">
+            <h4>{{ note.title }}&nbsp; | &nbsp;</h4>
+            <p>{{ note.description }}</p>
+            <md-button type='button' class="md-raised md-default" ng-click="editNote(note)">Edit</md-button>
+            <md-button type='button' class="md-raised md-warn" ng-click="deleteNote(note)">Delete</md-button>
+          </md-list-item>
+        </md-list>
+
+        <div layout="row" layout-align="center center">
+          <div flex="flex"></div>
+          <md-button type='button' class="md-raised md-default" ng-click="close()">Close</md-button>
+        </div>
+    </md-content>
+  </div>
+</md-dialog>

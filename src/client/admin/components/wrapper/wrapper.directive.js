@@ -14,6 +14,18 @@
             login: {
                 controller: loginCtrl,
                 template: 'admin/wrapper/templates/loginModal.html'
+            },
+            createNote: {
+                controller: createNoteCtrl,
+                template: 'admin/wrapper/templates/createNoteModal.html'
+            },
+            editNote: {
+                controller: editNoteCtrl,
+                template: 'admin/wrapper/templates/editNoteModal.html'
+            },
+            viewNotes: {
+                controller: viewNotesCtrl,
+                template: 'admin/wrapper/templates/viewNotesModal.html'
             }
         };
 
@@ -35,6 +47,18 @@
 
         $scope.$on('logOut', function() {
             ctrl.logout();
+        });
+
+        $scope.$on('showNewNoteModal', function() {
+            ctrl.showModal('createNote');
+        });
+
+        $scope.$on('showViewNotesModal', function() {
+            ctrl.showModal('viewNotes');
+        });
+
+        $scope.$on('showEditNote', function(event, data) {
+            ctrl.showModal('editNote', { noteData: data.noteData });
         });
 
         ctrl.showSideNav = function() {
@@ -225,6 +249,12 @@
                 case 'createAccount':
                     $rootScope.$broadcast('showSignUpModal');
                     break;
+                case 'newNote':
+                    $rootScope.$broadcast('showNewNoteModal');
+                    break;
+                case 'viewNotes':
+                    $rootScope.$broadcast('showViewNotesModal');
+                    break;
             }
 
             $scope.close();
@@ -237,6 +267,134 @@
     }
 
     sideNavCtrl.$inject = ['$scope', '$rootScope', '$timeout', '$location', '$mdDialog', '$mdToast', '$mdSidenav', 'HTTPService'];
+
+    
+    function createNoteCtrl($scope, $rootScope, $timeout, $mdDialog, $mdToast, HTTPService, adminAppModel) {
+
+        $scope.close = function() {
+            $rootScope.$broadcast('hideModal');
+        };
+
+        $scope.createNote = function(noteData) {
+            noteData.accountId = adminAppModel.userData._id;
+
+            HTTPService.post('/notes/create', noteData, function(success, response){
+                if(success){
+                    $scope.close();
+                    $scope.showToaster('Success - Note created');
+                }else{
+                    console.log('Error: ', response);
+                }
+            });
+        };
+
+        $scope.showToaster = function(msg) {
+            $mdToast.show(
+              $mdToast.simple()
+                .content(msg)
+                .position('top right')
+                .hideDelay(3000)
+            );
+        };
+
+    }
+
+    createNoteCtrl.$inject = ['$scope', '$rootScope', '$timeout', '$mdDialog', '$mdToast', 'HTTPService', 'adminAppModel'];
+
+    function editNoteCtrl($scope, $rootScope, $timeout, $mdDialog, $mdToast, HTTPService, adminAppModel, noteData) {
+
+        $scope.noteData = angular.copy(noteData);
+
+        $scope.close = function() {
+            $rootScope.$broadcast('hideModal');
+        };
+
+        $scope.editNote = function(noteData) {
+            HTTPService.post('/notes/update', noteData, function(success, response){
+                if(success){
+                    $scope.close();
+                    $scope.showToaster('Success - Note edited');
+                }else{
+                    console.log('Error: ', response);
+                }
+            });
+        };
+
+        $scope.showToaster = function(msg) {
+            $mdToast.show(
+              $mdToast.simple()
+                .content(msg)
+                .position('top right')
+                .hideDelay(3000)
+            );
+        };
+
+    }
+
+    editNoteCtrl.$inject = ['$scope', '$rootScope', '$timeout', '$mdDialog', '$mdToast', 'HTTPService', 'adminAppModel', 'noteData'];
+
+
+    function viewNotesCtrl($scope, $rootScope, $timeout, $mdDialog, $mdToast, HTTPService, adminAppModel) {
+
+        $scope.close = function() {
+            $rootScope.$broadcast('hideModal');
+        };
+
+        $scope.getNotes = function() {
+            HTTPService.post('/notes', { noteIds: adminAppModel.userData.noteIds }, function(success, response){
+                if(success){
+                    $scope.notes = response.data.notes;
+                }else{
+                    console.log('Error: ', response);
+                }
+            });
+        };
+        $scope.getNotes();
+
+        $scope.editNote = function(noteData) {
+            $scope.close();
+            $rootScope.$broadcast('showEditNote', { noteData: noteData });
+        };
+
+        $scope.deleteNote = function(noteData) {
+            var confirm = $mdDialog.confirm()
+                  .title('Are you sure you want to delete this note?')
+                  .textContent('This can\'t be undone.')
+                  .ariaLabel('Confirm delete')
+                  // .targetEvent(event)
+                  .ok('Yes, Delete It')
+                  .cancel('No, Don\'t Delete');
+            $mdDialog.show(confirm).then(function() {
+
+                var deleteData = {
+                    noteId: noteData._id,
+                    accountId: adminAppModel.userData._id
+                };
+
+                HTTPService.post('/notes/delete', deleteData, function(success, response){
+                    if(success){
+                        $scope.getNotes();
+                        $scope.showToaster('Success - note deleted');
+                    }else{
+                        console.log('Error: ', response);
+                    }
+                });
+            });
+        };
+
+        $scope.showToaster = function(msg) {
+            $mdToast.show(
+              $mdToast.simple()
+                .content(msg)
+                .position('top right')
+                .hideDelay(3000)
+            );
+        };
+
+    }
+
+    viewNotesCtrl.$inject = ['$scope', '$rootScope', '$timeout', '$mdDialog', '$mdToast', 'HTTPService', 'adminAppModel'];
+
 
     function wrapperDirective() {
         return {
